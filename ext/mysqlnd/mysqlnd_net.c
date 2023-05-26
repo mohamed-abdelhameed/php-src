@@ -972,7 +972,7 @@ MYSQLND_METHOD(mysqlnd_net, enable_ssl)(MYSQLND_NET * const net TSRMLS_DC)
 	}
 
 	php_stream_context_set(net_stream, context);
-	if (php_stream_xport_crypto_setup(net_stream, STREAM_CRYPTO_METHOD_TLS_CLIENT, NULL TSRMLS_CC) < 0 ||
+	if (php_stream_xport_crypto_setup(net_stream, STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT, NULL TSRMLS_CC) < 0 ||
 	    php_stream_xport_crypto_enable(net_stream, 1 TSRMLS_CC) < 0)
 	{
 		DBG_ERR("Cannot connect to MySQL by using SSL");
